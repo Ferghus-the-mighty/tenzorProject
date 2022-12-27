@@ -1,3 +1,4 @@
+import time
 from webpages.YandexPages import SearchHelper, YandexLocators
 
 
@@ -32,11 +33,14 @@ def test_yandex_pictures(browser):
 
     ya.click_element(YandexLocators.LOCATOR_FIRST_IMAGE)
     assert ya.check_element_exists(YandexLocators.LOCATOR_IMAGE_OPENED)
+    time.sleep(2)
 
     first_image = ya.get_attribute(YandexLocators.LOCATOR_IMAGE_OPENED, 'src')
     ya.click_element(YandexLocators.LOCATOR_BUTTON_RIGHT)
+    time.sleep(2)
     second_image = ya.get_attribute(YandexLocators.LOCATOR_IMAGE_OPENED, 'src')
     assert first_image != second_image
+    time.sleep(2)
 
     ya.click_element(YandexLocators.LOCATOR_BUTTON_LEFT)
     first_image_again = ya.get_attribute(YandexLocators.LOCATOR_IMAGE_OPENED, 'src')
