@@ -4,4 +4,4 @@
 2. Selenium
 3. PyTest
 ## Start
-For testing run python script Test.py
+For testing run python script Tests.py
